@@ -1,29 +1,29 @@
-﻿using System;
+﻿using EmployeeManagement.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using EmployeeManagement.Contracts;
 
 namespace EmployeeManagement.Models
 {
-    public class FullTimeEmployee: IEmployee
+    class ContractorEmployee : IEmployee
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public decimal Salary { get; set; }
 
-        public string GetEmailAddress()
-        {
-           return $"{FirstName}{LastName}@mail.pl";
-        }
-
         public decimal CalculateCost()
         {
-            return Salary * 1.5m;
+            return Salary * 1.3m;
+        }
+
+        public string GetEmailAddress()
+        {
+            return $"{FirstName}{LastName}@mail.pl";
         }
 
         public string GetEmploymentType()
         {
-            return "Full Time";
+            return "Contractor";
         }
     }
 }
